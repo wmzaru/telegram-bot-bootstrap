@@ -10,8 +10,8 @@ var multer = require('multer');
 
 // telegram bot
 var bot = require(__dirname + '/bot.js');
-var token = 'your example token';
-var webhookUrl = 'your webhook url'
+var token = '154392636:AAFAopfSVBIZJTyTdLnzAe0x_UvNbRdO_JE';
+var webhookUrl = 'https://waterflow.herokuapp.com/'
 var bot1 = new bot(process.env.TOKEN || token, process.env.WEBHOOK || webhookUrl);
 
 
