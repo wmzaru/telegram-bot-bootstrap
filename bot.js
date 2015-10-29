@@ -13,6 +13,19 @@ var bot = function(token, webhookUrl) {
 
  }
 
+var bot = require('telegram-bot-bootstrap');
+var fs = require('fs');
+
+var Alice = new bot('154392636:AAFAopfSVBIZJTyTdLnzAe0x_UvNbRdO_JE');
+
+Alice.getUpdates().then(console.log)
+// → you'll see an update message. Look for your user_id in "message.from.id"
+
+// Once you get your id to message yourself, you may:
+Alice.sendMessage(19884279, "Hello there")
+// → you'll receive a message from Alice.
+.then(console.log)
+// → optional, will log the successful message sent over HTTP
 // // set prototype to API
 bot.prototype = API.prototype;
 // // set constructor back to bot
@@ -40,3 +53,4 @@ sample keyboard
      ],
      one_time_keyboard: true
  }
+ 
