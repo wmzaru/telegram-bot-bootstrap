@@ -18,26 +18,6 @@ bot.prototype = API.prototype;
 // // set constructor back to bot
 bot.prototype.constructor = bot;
 
-
-/**
- * Handles a Telegram Update object sent from the server. Extend this method for your bot.
- * 
- * @category Bot
- * @param {Object} req The incoming HTTP request.
- * @param {Object} res The HTTP response in return.
- * @returns {Promise} promise A promise returned from calling Telegram API method(s) for chaining.
- *
- * @example
- * var bot1 = new bot('yourtokenhere');
- * ...express server setup
- * app.route('/')
- * // robot API as middleware
- * .post(function(req, res) {
- *     bot1.handle(req, res)
- * })
- * // Then bot will handle the incoming Update from you, routed from Telegram!
- * 
- */
 bot.prototype.handle = function(req, res) {
 //     // the Telegram Update object. Useful shits
      var Update = req.body,
@@ -47,16 +27,6 @@ Message = Update.message,
 user_id = Message.from.id,
 //         // id of the chat(room)
 chat_id = Message.chat.id;
-
-//     ////////////////////////
-//     // Extend from here:  //
-//     ////////////////////////
-//     // you may call the methods from API.js, which are all inherited by this bot class
-    
-//     // echo
-//     this.sendMessage(chat_id, "you said: " + Message.text);
-
-// }
 
 export the bot class
 module.exports = bot;
