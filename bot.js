@@ -1,26 +1,22 @@
-/////////////////////////////////////////
-// Safety: Uncomment everything to use //
-/////////////////////////////////////////
 
-// // dependencies
-// var _ = require('lomath');
+var _ = require('lomath');
 
-// // API as superclass that bot inherits methods from
-// var API = require(__dirname + '/API.js')
+// API as superclass that bot inherits methods from
+var API = require(__dirname + '/API.js')
 
 // // The bot object prototype
 // // bot extends and inherits methods of API
-// var bot = function(token, webhookUrl) {
-//     API.apply(this, arguments);
-//     // set webhook on construction: override the old webhook
-//     this.setWebhook(webhookUrl || '');
+var bot = function(token, webhookUrl) {
+     API.apply(this, arguments);
+     // set webhook on construction: override the old webhook
+     this.setWebhook(webhookUrl || '');
 
-// }
+ }
 
 // // set prototype to API
-// bot.prototype = API.prototype;
+bot.prototype = API.prototype;
 // // set constructor back to bot
-// bot.prototype.constructor = bot;
+bot.prototype.constructor = bot;
 
 
 /**
@@ -42,15 +38,15 @@
  * // Then bot will handle the incoming Update from you, routed from Telegram!
  * 
  */
-// bot.prototype.handle = function(req, res) {
+bot.prototype.handle = function(req, res) {
 //     // the Telegram Update object. Useful shits
-//     var Update = req.body,
+     var Update = req.body,
 //         // the telegram Message object
-//         Message = Update.message,
+Message = Update.message,
 //         // the user who sent it
-//         user_id = Message.from.id,
+user_id = Message.from.id,
 //         // id of the chat(room)
-//         chat_id = Message.chat.id;
+chat_id = Message.chat.id;
 
 //     ////////////////////////
 //     // Extend from here:  //
@@ -62,15 +58,15 @@
 
 // }
 
-// export the bot class
-// module.exports = bot;
+export the bot class
+module.exports = bot;
 
-// sample keyboard
-// var kb = {
-//     keyboard: [
-//         ['one', 'two'],
-//         ['three'],
-//         ['four']
-//     ],
-//     one_time_keyboard: true
-// }
+sample keyboard
+ var kb = {
+     keyboard: [
+         ['one', 'two'],
+         ['three'],
+         ['four']
+     ],
+     one_time_keyboard: true
+ }
